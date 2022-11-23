@@ -5,8 +5,8 @@ RUN apk add --update \
 	bash \
 	git \
 	curl \
+	g++ \
+	make \
+	python \
 	&& rm -rf /var/cache/apk/*
-RUN apk add --no-cache python2 && \
-    python -m ensurepip && \
-    pip install --upgrade pip setuptools	
 ENTRYPOINT ["docker-entrypoint.sh"]
