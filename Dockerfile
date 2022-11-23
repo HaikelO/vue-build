@@ -6,9 +6,11 @@ RUN apk add --update \
 	npm \
 	git \
 	curl \
-  	python2 \
 	&& rm -rf /var/cache/apk/*
-RUN python -m ensurepip
-RUN pip install --no-cache --upgrade pip setuptools
+RUN apk add --no-cache python2 && \
+    python -m ensurepip && \
+    rm -r /usr/lib/python*/ensurepip && \
+    pip install --upgrade pip setuptools && \
+    rm -r /root/.cache
 	
 ENTRYPOINT ["docker-entrypoint.sh"]
