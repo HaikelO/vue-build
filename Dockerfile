@@ -7,6 +7,6 @@ RUN apk add --update \
 	curl \
 	g++ \
 	make \
-	python \
+	python2 \
 	&& rm -rf /var/cache/apk/*
 ENTRYPOINT ["docker-entrypoint.sh"]
