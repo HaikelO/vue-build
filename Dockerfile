@@ -6,7 +6,7 @@ RUN apk add --update \
 	npm \
 	git \
 	curl \
-  python3 \
+  	python3 \
 	&& rm -rf /var/cache/apk/*
 	
 ENTRYPOINT ["docker-entrypoint.sh"]
